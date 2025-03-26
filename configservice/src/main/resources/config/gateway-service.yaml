@@ -1,0 +1,24 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    gateway:
+     discovery:
+         locator:
+            enabled: true
+            lower-case-service-id: true
+     routes[0]:
+       id: user-route
+       uri: lb://account-service
+       predicates:
+       - Path=/user/**
+       filters:
+       - StripPrefix=1
+
+     routes[1]:
+         id: statistic-route
+         uri: lb://statistic-service
+         predicates:
+         - Path=/report/**
+         filters:
+         - StripPrefix=1

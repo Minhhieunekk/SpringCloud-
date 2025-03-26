@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: notification-service
+
+  config:
+    import: configserver:http://localhost:8888
+  cloud:
+    config:
+      fail-fast: true
+#  mail:
+#    host: smtp.gmail.com
+#    port: 587
+#    username: iwillwin2211@gmail.com
+#    password: wqas iogy ynlo qzuc
+#    properties:
+#      mail:
+#        smtp:
+#          auth: true
+#          starttls:
+#            enable: true
+#    protocol: smtp
+#    test-connection: false
+#springdoc:
+#  swagger-ui:
+#    path: /swagger-ui.html
+#logging:
+#  level:
+#    root: info
+#
+#server:
+#  port: 9083
